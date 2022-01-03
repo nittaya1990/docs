@@ -17,6 +17,8 @@ env:
 
 jobs:
   test:
+    permissions:
+      contents: read
     runs-on: windows-latest
     if: (github.event_name != 'pull_request') || (github.event_name == 'pull_request' && (contains(github.event.pull_request.labels.*.name, 'Windows') || contains(github.event.pull_request.labels.*.name, 'windows')))
     timeout-minutes: 60
