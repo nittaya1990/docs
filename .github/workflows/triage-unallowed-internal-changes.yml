@@ -40,6 +40,8 @@ jobs:
             notAllowedSearchSyncLabel:
               - 'lib/search/indexes/**'
   notAllowed:
+    permissions:
+      contents: none
     needs: check-internal-changes
     if: ${{ needs.check-internal-changes.outputs.notAllowed == 'true' }}
     runs-on: ubuntu-latest
@@ -49,6 +51,8 @@ jobs:
           echo "Please admin merge if you really need to update app.json!"
           exit 1
   notAllowedSearchSyncLabel:
+    permissions:
+      contents: none
     needs: check-internal-changes
     if: ${{ needs.check-internal-changes.outputs.notAllowedSearchSyncLabel == 'true' }}
     runs-on: ubuntu-latest
