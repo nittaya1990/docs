@@ -10,6 +10,8 @@ on:
 
 jobs:
   ping_staging_apps:
+    permissions:
+      contents: read
     name: Ping
     if: github.repository == 'github/docs-internal'
     runs-on: ubuntu-latest
