@@ -12,6 +12,8 @@ on:
 
 jobs:
   homogenize_frontmatter:
+    permissions:
+      contents: write
     name: Homogenize frontmatter
     # Only run this after octoglot commits or when a Hubber is running this using the workflow dispatch button.
     if: github.repository == 'github/docs-internal' && (github.event.pusher.name == 'octoglot' || github.event_name == 'workflow_dispatch')
